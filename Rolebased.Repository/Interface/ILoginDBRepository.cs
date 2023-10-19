@@ -1,4 +1,7 @@
-﻿using RoleBased.Model;
+﻿using AutoMapper;
+using Rolebased.Repository.Concrete;
+using RoleBased.Infrastructure.Persistence;
+using RoleBased.Model;
 using RoleBased.Service.Model;
 using RoleBased.Shared.Contracts;
 using System;
@@ -9,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Rolebased.Repository.Interface
 {
-    public  interface IStudentInfoRepository :  IRepository<StudentInfo, VMStudent, string> 
+    public interface IloginDBRepository : IRepository<LoginDB, VMLoginDB, string>     
     {
     }
 }

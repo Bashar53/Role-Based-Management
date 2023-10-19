@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RoleBased.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using RoleBased.Infrastructure.Persistence;
 namespace RoleBased.Infrastructure.Migrations
 {
     [DbContext(typeof(RoleBasedDbContext))]
-    partial class RoleBasedDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231005061431_CreateLoginDB")]
+    partial class CreateLoginDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

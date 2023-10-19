@@ -16,11 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Behavior\" />
-    <Folder Include="CQRS\RoleBased\Command\Validation\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RoleBased.Model\RoleBased.Model.csproj" />
     <ProjectReference Include="..\Rolebased.Repository\Rolebased.Repository.csproj" />
     <ProjectReference Include="..\RoleBased.Service.Model\RoleBased.Service.Model.csproj" />

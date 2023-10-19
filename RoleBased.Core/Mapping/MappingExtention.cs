@@ -14,6 +14,7 @@ namespace RoleBased.Core.Mapping
     {
         public MappingExtention() {
             CreateMap<VMStudent, StudentInfo>().ReverseMap();
+            CreateMap<VMLoginDB, LoginDB>().ReverseMap();
 
         }
 

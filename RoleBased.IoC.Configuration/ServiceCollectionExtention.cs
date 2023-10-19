@@ -11,6 +11,9 @@ using RoleBased.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using FluentValidation;
 using MediatR;
+using RoleBased.Core.Behavior;
+using Rolebased.Repository.Interface;
+using Rolebased.Repository.Concrete;
 
 namespace RoleBased.IoC.Configuration
 {
@@ -23,16 +26,16 @@ namespace RoleBased.IoC.Configuration
             (configuration.GetConnectionString("default")));
 
             services.AddAutoMapper(typeof(MappingExtention).Assembly);
-            //services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IStudentInfoRepository,StudentInfoRepository>();
 
-            //services.AddTransient<ICountryRepository, CountryRepository>();
+            services.AddTransient<IloginDBRepository ,LoginDBRepository>();
             //services.AddTransient<IStateRepository, StateRepository>();
 
             services.AddValidatorsFromAssembly(typeof(ICore).Assembly);
             services.AddMediatR(cfg =>
             {
                 cfg.RegisterServicesFromAssemblies(typeof(ICore).Assembly);
-               // cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+                cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             });
             return services;
         }
